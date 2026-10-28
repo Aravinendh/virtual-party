@@ -29,5 +29,31 @@ Then verifiy using:
 docker exec vp-mongodb mongosh --quiet --eval "rs.status().myState"
 ```
 
+## 3. Notification Event Contract
 
+Step 1: Install validation libraries
+In Windows Command Prompt, from D:\virtual-party\apps\api, run:
 
+```
+npm install class-validator class-transformer
+```
+
+## 4. Notificatino Contract
+
+```
+export enum NotificationType {
+  CREATOR_EVENT_SCHEDULED = 'CREATOR_EVENT_SCHEDULED',
+  CREATOR_EVENT_STARTED = 'CREATOR_EVENT_STARTED',
+  ROOM_INVITATION = 'ROOM_INVITATION',
+}
+
+export interface NotificationEvent {
+  eventId: string;
+  type: NotificationType;
+  recipientId: string;
+  title: string;
+  body: string;
+  createdAt: string;
+  version: 1;
+}
+```
