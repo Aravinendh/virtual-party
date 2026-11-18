@@ -38,7 +38,7 @@ In Windows Command Prompt, from D:\virtual-party\apps\api, run:
 npm install class-validator class-transformer
 ```
 
-## 4. Notificatino Contract
+## 4. Notification Contract
 
 ```
 export enum NotificationType {
